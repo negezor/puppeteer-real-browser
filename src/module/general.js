@@ -18,13 +18,10 @@ export const notice = ({ message = '', type = 'warning' }) => {
             console.log(pc.yellow(`[WARNING] [PUPPETEER-REAL-BROWSER] | ${message}`));
             break;
     }
-    return true
 }
 
-
 export function slugify(text) {
-    text = String(text)
-    return text
+    return String(text)
         .toUpperCase()
         .toLowerCase()
         .normalize('NFD')
@@ -33,10 +30,8 @@ export function slugify(text) {
         .replace(/[^\w\-]+/g, '');
 }
 
-export const sleep = (ms) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve()
-        }, ms);
+export const sleep = (ms) => (
+    new Promise((resolve) => {
+        setTimeout(resolve, ms);
     })
-}
+)
