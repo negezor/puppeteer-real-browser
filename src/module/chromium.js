@@ -57,7 +57,8 @@ export const startSession = async ({
             '--disable-setuid-sandbox',
             '--disable-blink-features=AutomationControlled',
             '--window-size=1920,1080',
-        ].concat(args);
+            ...args,
+        ];
 
         if (headless === true && isWindowsPlatform) {
             chromeFlags.push('--headless=new');
